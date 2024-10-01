@@ -15,11 +15,11 @@
 #include <DFRobot_AirQualitySensor.h>
 
 class DFAirQuality : public Sensor {
-	public:
+	protected:
 		DFAirQuality(TwoWire* I2C_bus = &Wire, uint8_t address = 0x19);
 		bool begin();
 		bool takeMeasurement();
 
-	private:
+	protected:
 		DFRobot_AirQualitySensor air_sensor;
 };
