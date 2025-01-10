@@ -12,7 +12,6 @@ bool DFAirQuality::begin() {
 	Description.name = "Air Quality Sensor";
 	Description.parameters = {"PM 2.5", "PM 10"};
 	Description.units = {"ug/m^3", "ug/m^3"};
-	Description.id = 2;
 	return air_sensor.begin();
 }
 
