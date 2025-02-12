@@ -6,12 +6,12 @@
 DFAirQuality::DFAirQuality(TwoWire* I2C_bus, uint8_t address) : air_sensor(I2C_bus, address) {}
 
 bool DFAirQuality::begin() {
-	values.resize(2);
 	Description.parameterQuantity = 2;
 	Description.type = "Air Quality Sensor";
 	Description.name = "Air Quality Sensor";
 	Description.parameters = {"PM 2.5", "PM 10"};
 	Description.units = {"ug/m^3", "ug/m^3"};
+	values.resize(Description.parameterQuantity);
 	return air_sensor.begin();
 }
 
