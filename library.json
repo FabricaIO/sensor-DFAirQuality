@@ -1,0 +1,51 @@
+{
+	"name": "Fabrica-IO Sensor DF Robot Air Quality",
+	"version": "0.5.0",
+	"description": "I2C PM2.5 air quality sensor",
+	"keywords": "Fabrica-IO, sensor, air quality, i2c",
+	"repository":
+	{
+	  "type": "git",
+	  "url": "https://github.com/FabricaIO/sensor-DFAirquality.git"
+	},
+	"authors":
+	[
+	  {
+		"name": "Sam Groveman",
+		"email": "SamGroveman@outlook.com",
+		"url": "https://github.com/FabricaIO"
+	  }
+	],
+	"dependencies": {
+		"DFRobot_AirQualitySensor": "https://github.com/DFRobot/DFRobot_AirQualitySensor"
+	  },
+	"license": "GPLv3",
+	"homepage": "https://github.com/FabricaIO",
+	"frameworks": "arduino",
+	"platforms": "*",
+	"fabrica-io" : {
+		"name": "AirQuality",
+		"type": 0,
+		"category": "air quality",
+		"libname": "DFAirQuality",
+		"includes": ["DFAirQuality"],
+		"description": "I2C PM2.5 air quality sensor",
+		"constructor":
+		[
+			[
+				{
+					"name": "I2C_bus",
+					"type": "TwoWire*",
+					"description": "The I2C bus",
+					"default": "&Wire"
+				},
+				{
+					"name": "Address",
+					"type": "uint8_t",
+					"description": "The I2C address",
+					"default": "0x19"
+				}
+			]
+		]
+	}
+  }
