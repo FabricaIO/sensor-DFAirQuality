@@ -1,5 +1,5 @@
 {
-	"name": "Fabrica-IO Sensor DF Robot Air Quality",
+	"name": "sensor-DFAirquality",
 	"version": "0.5.0",
 	"description": "I2C PM2.5 air quality sensor",
 	"keywords": "Fabrica-IO, sensor, air quality, i2c",
