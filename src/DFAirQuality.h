@@ -16,7 +16,7 @@
 
 class DFAirQuality : public Sensor {
 	public:
-		DFAirQuality(TwoWire* I2C_bus = &Wire, uint8_t address = 0x19);
+		DFAirQuality(String Name, TwoWire* I2C_bus = &Wire, uint8_t address = 0x19);
 		bool begin();
 		bool takeMeasurement();
 
