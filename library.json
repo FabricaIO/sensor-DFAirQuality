@@ -23,7 +23,7 @@
 	"homepage": "https://github.com/FabricaIO",
 	"frameworks": "arduino",
 	"platforms": "*",
-	"fabrica-io" : {
+	"fabricaio" : {
 		"name": "AirQuality",
 		"type": 0,
 		"category": "air quality",
