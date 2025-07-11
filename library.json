@@ -1,12 +1,12 @@
 {
-	"name": "sensor-DFAirquality",
+	"name": "sensor-DFAirQuality",
 	"version": "0.5.0",
 	"description": "I2C PM2.5 air quality sensor",
 	"keywords": "Fabrica-IO, sensor, air quality, i2c",
 	"repository":
 	{
 	  "type": "git",
-	  "url": "https://github.com/FabricaIO/sensor-DFAirquality.git"
+	  "url": "https://github.com/FabricaIO/sensor-DFAirQuality.git"
 	},
 	"authors":
 	[

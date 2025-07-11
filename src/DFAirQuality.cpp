@@ -12,10 +12,6 @@ bool DFAirQuality::begin() {
 	Description.parameters = {"PM 2.5", "PM 10"};
 	Description.units = {"ug/m^3", "ug/m^3"};
 	values.resize(Description.parameterQuantity);
-	// Call default setup
-	if (!Sensor::begin()) {
-		return false;
-	}
 	return air_sensor.begin();
 }
 
