@@ -4,7 +4,21 @@
 /// @param Name The name of the device
 /// @param I2C_bus The I2C bus attached to the sensor
 /// @param address Address of the sensor
-DFAirQuality::DFAirQuality(String Name, TwoWire* I2C_bus, uint8_t address) : air_sensor(I2C_bus, address), Sensor(Name) {}
+DFAirQuality::DFAirQuality(String Name, TwoWire* I2C_bus, uint8_t address) : air_sensor(I2C_bus, address), Sensor(Name) {
+	i2c_bus = I2C_bus;
+}
+
+/// @brief Creates a new air quality sensor object
+/// @param Name The name of the device
+/// @param sda SDA pin to use for I2C bus
+/// @param scl SCL pin to use for I2C bus
+/// @param I2C_bus The I2C bus attached to the sensor
+/// @param address Address of the sensor
+DFAirQuality::DFAirQuality(String Name, int sda, int scl, TwoWire* I2C_bus, uint8_t address) : air_sensor(I2C_bus, address), Sensor(Name) {
+	i2c_bus = I2C_bus;
+	scl_pin = scl;
+	sda_pin = sda;
+}
 
 bool DFAirQuality::begin() {
 	Description.parameterQuantity = 2;
@@ -12,6 +26,16 @@ bool DFAirQuality::begin() {
 	Description.parameters = {"PM 2.5", "PM 10"};
 	Description.units = {"ug/m^3", "ug/m^3"};
 	values.resize(Description.parameterQuantity);
+	// Start I2C bus if not started
+	if (scl_pin > -1 && sda_pin > -1) {
+		if (!i2c_bus->begin(sda_pin, scl_pin)) {
+			return false;
+		}
+	} else {
+		if (!i2c_bus->begin()) {
+			return false;
+		}
+	}
 	return air_sensor.begin();
 }
 
