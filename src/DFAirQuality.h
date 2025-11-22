@@ -14,6 +14,7 @@
 #include <Wire.h>
 #include <DFRobot_AirQualitySensor.h>
 
+/// @brief Device for interfacing with the DF Robot PM 2.5 sensor
 class DFAirQuality : public Sensor {
 	public:
 		DFAirQuality(String Name, TwoWire* I2C_bus = &Wire, uint8_t address = 0x19);
